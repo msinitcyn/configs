@@ -11,3 +11,5 @@ set listchars=eol:¬,space:·
 
 imap jk <ESC>
 imap kj <ESC>
+
+colorscheme tender
