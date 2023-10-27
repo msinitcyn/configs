@@ -1,4 +1,5 @@
 syntax on
+set runtimepath+=~/.vim
 set syntax=whitespace
 
 set number
@@ -12,4 +13,9 @@ set listchars=eol:¬,space:·
 imap jk <ESC>
 imap kj <ESC>
 
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+syntax enable
 colorscheme tender
