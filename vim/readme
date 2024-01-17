@@ -1,1 +1,6 @@
-For ubunto it is necessary to run `sudo apt install vim-gtk3` first.
+For ubuntu it is necessary to run `sudo apt install vim-gtk3` first.
+
+To complete YouCompleteMe plugin installation run from ~/.vim/plugged/YouCompleteMe:
+
+git submodule update --init --recursive
+python3 install.py --clangd-completer
