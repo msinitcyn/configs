@@ -11,6 +11,7 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
 Plugin 'ycm-core/YouCompleteMe'
+Plugin 'puremourning/vimspector'
 
 call vundle#end()
 
@@ -18,6 +19,8 @@ call vundle#end()
 syntax on
 
 set syntax=whitespace
+
+set hidden
 
 set number
 set tabstop=4
@@ -40,10 +43,12 @@ map gd :bdelete<cr>
 imap jk <ESC>
 imap kj <ESC>
 
+nnoremap <silent> <Esc> :noh<CR>
+
 "colors
-if (has("termguicolors"))
- set termguicolors
-endif
+"if (has("termguicolors"))
+" set termguicolors
+"endif
 
 syntax enable
 colorscheme tender
@@ -61,3 +66,7 @@ let g:AutoPairsShortcutToggle = '<C-P>'
 let NERDTreeShowHidden = 1 
 execute "set <M-e>=\ee"
 nnoremap <M-e> :NERDTreeToggle<CR>
+
+"vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = ['vscode-cpptools']
