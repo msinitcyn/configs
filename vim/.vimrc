@@ -43,7 +43,7 @@ map gd :bdelete<cr>
 imap jk <ESC>
 imap kj <ESC>
 
-nnoremap <silent> <Esc> :noh<CR>
+:nnoremap <silent> <Esc><Esc> :noh<CR>
 
 "colors
 "if (has("termguicolors"))
@@ -70,3 +70,13 @@ nnoremap <M-e> :NERDTreeToggle<CR>
 "vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 let g:vimspector_install_gadgets = ['vscode-cpptools']
+
+"split resizing
+execute "set <M-k>=\ek"
+:nnoremap <M-k> :resize -1<CR>
+execute "set <M-j>=\ej"
+:nnoremap <M-h> :vertical resize -1<CR>
+execute "set <M-h>=\eh"
+:nnoremap <M-j> :resize +1<CR>
+execute "set <M-l>=\el"
+:nnoremap <M-l> :vertical resize +1<CR>
