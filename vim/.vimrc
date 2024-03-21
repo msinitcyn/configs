@@ -2,19 +2,19 @@ set nocompatible
 filetype off
 
 "package management
-set runtimepath+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'preservim/nerdtree'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'puremourning/vimspector'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-call vundle#end()
+Plug 'VundleVim/Vundle.vim'
+Plug 'sheerun/vim-polyglot'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'puremourning/vimspector'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
 
 "editing
 syntax on
