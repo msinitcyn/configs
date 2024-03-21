@@ -12,7 +12,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'preservim/nerdtree'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'puremourning/vimspector'
-
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 call vundle#end()
 
 "editing
@@ -23,6 +24,7 @@ set syntax=whitespace
 set hidden
 
 set number
+set relativenumber
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -36,9 +38,13 @@ set incsearch
 set hlsearch
 
 "mappings
-map gn :bnext<cr>
-map gp :bprevious<cr>
-map gd :bdelete<cr>
+nnoremap gn :bnext<cr>
+nnoremap gp :bprevious<cr>
+nnoremap gd :bdelete<cr>
+nnoremap gl :ls<CR>:b<Space>
+
+nnoremap <C-t> :Files<CR>
+nnoremap <C-f> :Rg<CR>
 
 imap jk <ESC>
 imap kj <ESC>
@@ -80,3 +86,12 @@ execute "set <M-h>=\eh"
 :nnoremap <M-j> :resize +1<CR>
 execute "set <M-l>=\el"
 :nnoremap <M-l> :vertical resize +1<CR>
+
+"ycm
+let g:ycm_confirm_extra_conf = 0
+
+"vim-visual-multi
+let g:VM_maps = {}
+let g:VM_maps["Add Cursor Down"] = '<C-j>'   " new cursor down
+let g:VM_maps["Add Cursor Up"] = '<C-k>'   " new cursor up
+
