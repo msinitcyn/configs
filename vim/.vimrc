@@ -8,16 +8,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'VundleVim/Vundle.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/tagbar'
 Plug 'preservim/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'puremourning/vimspector'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'chrisbra/csv.vim'
 
 call plug#end()
 
 "editing
 syntax on
+
+set cindent
+set cinoptions=g-1
+autocmd FileType cpp setlocal cinoptions+=N-s
 
 set syntax=whitespace
 
@@ -36,6 +42,9 @@ set listchars=eol:¬,space:·
 
 set incsearch
 set hlsearch
+
+"close buffer and keep panel
+map qq :bp<bar>sp<bar>bn<bar>bd<CR>
 
 "mappings
 nnoremap gn :bnext<cr>
@@ -66,6 +75,13 @@ set splitbelow
 "term
 execute "set <M-t>=\et"
 nnoremap <M-t> :term<CR>
+
+"tagbar
+
+"nnoremap <Esc>[19~ :TagbarToggle<CR>
+execute "set <M-m>=\em"
+nnoremap <M-m> :TagbarToggle<CR>
+"nnoremap <silent> <F8> :TagbarToggle<CR>
 
 "NERDTree
 let g:AutoPairsShortcutToggle = '<C-P>'
