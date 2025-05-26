@@ -15,6 +15,8 @@ Plug 'puremourning/vimspector'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/csv.vim'
+Plug 'embear/vim-localvimrc'
+Plug 'tpope/vim-dispatch'
 
 call plug#end()
 
@@ -44,13 +46,17 @@ set incsearch
 set hlsearch
 
 "close buffer and keep panel
-map qq :bp<bar>sp<bar>bn<bar>bd<CR>
+nnoremap qq :bp<bar>sp<bar>bn<bar>bd<cr>
 
-"mappings
+"close all the buffers except the current one
+nnoremap gh :%bd<bar>e#<bar>bd#<cr>
+
+"buffer navigation
 nnoremap gn :bnext<cr>
 nnoremap gp :bprevious<cr>
 nnoremap gd :bdelete<cr>
-nnoremap gl :ls<CR>:b<Space>
+"nnoremap gl :ls<cr>:b<Space>
+nnoremap gl :Buffers<cr>
 
 nnoremap <C-t> :Files<CR>
 nnoremap <C-f> :Rg<CR>
@@ -77,11 +83,8 @@ execute "set <M-t>=\et"
 nnoremap <M-t> :term<CR>
 
 "tagbar
-
-"nnoremap <Esc>[19~ :TagbarToggle<CR>
 execute "set <M-m>=\em"
 nnoremap <M-m> :TagbarToggle<CR>
-"nnoremap <silent> <F8> :TagbarToggle<CR>
 
 "NERDTree
 let g:AutoPairsShortcutToggle = '<C-P>'
@@ -111,3 +114,16 @@ let g:VM_maps = {}
 let g:VM_maps["Add Cursor Down"] = '<C-j>'   " new cursor down
 let g:VM_maps["Add Cursor Up"] = '<C-k>'   " new cursor up
 
+" Allow local .vimrc files
+set exrc
+set secure
+
+let g:localvimrc_ask = 0
+
+set title
+
+" These guys use mad non-breaking code https://github.com/puremourning/.vim-mac/blob/master/vimrc
+set linebreak
+set breakindent
+set showbreak=>\
+set breakindentopt=shift:2,min:64
